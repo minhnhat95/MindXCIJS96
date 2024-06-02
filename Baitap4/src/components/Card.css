@@ -1,0 +1,122 @@
+div.card {
+  width: 18rem;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+div.card:hover {
+  cursor: pointer;
+  transform: translateY(-0.3125rem);
+}
+
+div.card p.student_id {
+  color: #919191;
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0 0;
+}
+
+div.card p.student_name {
+  color: black;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0 1rem;
+}
+
+div.card span {
+  font-size: 1.25rem;
+  padding: 0.25rem 1.6rem;
+  border-radius: 0.5rem;
+}
+
+/* Tạo modal */
+div.nenmodal div.nenmodal2 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+div.nenmodal div.popup {
+  width: 18rem;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 2;
+  display: block;
+  position: fixed;
+}
+
+div.popup:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .nenmodal .popup {
+    width: 90%;
+  }
+
+  div.nenmodal div.popup p.student_id {
+    color: #919191;
+    font-size: 1.25rem;
+    margin: 0.5rem 0 0 0;
+  }
+
+  div.nenmodal div.popup p.student_name {
+    color: black;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0 0 1rem;
+  }
+
+  div.nenmodal div.popup span {
+    font-size: 1.25rem;
+    padding: 0.25rem 1.6rem;
+    border-radius: 0.5rem;
+  }
+
+  div.nenmodal div.popup div.closemodal {
+    width: 100%;
+    text-align: center;
+  }
+
+  div.nenmodal div.popup div.closemodal button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background-color: green;
+    font-size: 1.25rem;
+    border-radius: 100%;
+    border: none;
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  div.nenmodal.active div.nenmodal2 {
+    display: block;
+  }
+}
+
+div.nenmodal.active div.popup {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
